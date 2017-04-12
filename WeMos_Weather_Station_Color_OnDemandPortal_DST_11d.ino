@@ -204,6 +204,10 @@ Modified by DK Fowler ... 08-Apr-2017
   
   Also, restored the original WebResource routine call to allow checking for and downloading icons that may be missing from squix's site.  (
   These are now normally loaded externally using the ESP8266 Sketch Data Upload tool.)
+
+Modified by DK Fowler ... 12-Apr-2017
+  Removed include for TimeLib library, as there are no new dependencies on this library.  The code now uses the original core time library 
+  provided with the ESP8266 board support.
   
 */
 #include <FS.h>
@@ -242,8 +246,8 @@ Modified by DK Fowler ... 08-Apr-2017
 #include "settings.h"
 #include <JsonListener.h>
 #include <WundergroundClient.h>
-#include <time.h>
-#include <TimeLib.h>
+#include "time.h"
+//#include <TimeLib.h>
 
 #include <DoubleResetDetector.h>  //https://github.com/datacute/DoubleResetDetector
 #include <simpleDSTadjust.h>
